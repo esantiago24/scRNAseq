@@ -1,0 +1,8 @@
+##Generate sce object first 
+
+Dataframe<-read.delim("https://tools.thermofisher.com/content/sfs/manuals/cms_095046.txt",header=TRUE,sep="\t",stringsAsFactors = FALSE)
+x<-rownames(altExp(sce,"ERCC"))
+y<-Dataframe$ERCC.ID
+obj<-match(x,y)
+Dataframe<-Dataframe[obj,]
+scCounts<-assay(altExp(sce,"counts")[,1])
