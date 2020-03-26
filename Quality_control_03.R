@@ -1,5 +1,5 @@
 #Exercise
-
+#Obtain the positions for which the expression is TRUE
 qc.lib_true<-which(qc.lib == TRUE)
 qc.spike_true<-which(qc.spike== TRUE)
 qc.mito_true<-which(qc.mito==TRUE)
@@ -12,6 +12,7 @@ qc.lib_true
 > qc.mito_true
 [1]  22  62  67  75  97  98 101 104 106 125 127 130 133 152
 
+#Use the intersect function to see if there is any cell that was not discarded by the other two criteria.
 > intersect(qc.lib_true,qc.spike_true)
 [1] 191
 > intersect(qc.lib_true,qc.mito_true)
